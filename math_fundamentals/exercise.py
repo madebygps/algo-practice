@@ -149,6 +149,60 @@ def average(numbers: list[float]) -> float:
 
 
 # =============================================================================
+# PROBLEM 5: Growth Rate Comparison (BONUS - ties it all together!)
+# =============================================================================
+
+def compare_growth_rates(n: int) -> dict:
+    """
+    Calculate different growth rates for a given n to understand
+    algorithm complexity comparisons.
+    
+    This helps visualize why O(log n) is better than O(n), 
+    which is better than O(n^2), which is better than O(n!).
+    
+    Calculate and return:
+        - O(1): constant = 1
+        - O(log n): logarithmic = floor(log2(n))
+        - O(n): linear = n
+        - O(n log n): linearithmic = n * floor(log2(n))
+        - O(n^2): quadratic = n^2
+        - O(2^n): exponential = 2^n (cap at n=20 to avoid huge numbers)
+    
+    Use your power() and log_base_2() functions from above!
+    
+    Examples:
+        compare_growth_rates(8) -> {
+            'constant': 1,
+            'logarithmic': 3,
+            'linear': 8,
+            'linearithmic': 24,
+            'quadratic': 64,
+            'exponential': 256
+        }
+    
+    Args:
+        n: A positive integer (assume n >= 1)
+    
+    Returns:
+        Dictionary with growth rate names as keys and calculated values
+    """
+    growth_rates = {
+        'constant': 1,
+        
+    }
+
+    growth_rates['logarithmic'] = log_base_2(n)
+    growth_rates['linear'] = n
+    growth_rates['linearithmic'] = n * math.floor(log_base_2(n))
+    growth_rates['quadratic'] = int(math.pow(n, 2))
+    growth_rates['exponential'] = power(2, n)
+
+    return growth_rates
+
+
+
+
+# =============================================================================
 # TEST CASES - Run this file to check your solutions!
 # =============================================================================
 
@@ -224,7 +278,25 @@ def run_tests():
             all_passed = False
         print(f"  {status} average({nums}) = {result} (expected {expected})")
     
-  
+    # Test compare_growth_rates()
+    print("\n🚀 Testing compare_growth_rates()...")
+    result = compare_growth_rates(8)
+    expected = {
+        'constant': 1,
+        'logarithmic': 3,
+        'linear': 8,
+        'linearithmic': 24,
+        'quadratic': 64,
+        'exponential': 256
+    }
+    if result == expected:
+        print(f"  ✅ compare_growth_rates(8) = correct!")
+        print(f"     Shows: O(1)=1, O(log n)=3, O(n)=8, O(n log n)=24, O(n²)=64, O(2ⁿ)=256")
+    else:
+        all_passed = False
+        print(f"  ❌ compare_growth_rates(8)")
+        print(f"     Got:      {result}")
+        print(f"     Expected: {expected}")
     
     # Summary
     print("\n" + "=" * 60)
