@@ -236,7 +236,19 @@ def integer_sqrt(n: int) -> int:
     """
     # TODO: Use binary search to find the square root
     # Hint: Search between 0 and n, check if mid*mid <= n
-    pass
+
+    low = 0
+    high = n
+    result = 0
+
+    while low <= high:
+        mid = (low + high) // 2
+        if mid*mid <= n:
+            result = mid
+            low = mid + 1
+        else:
+            high = mid - 1 
+    return result
 
 
 # =============================================================================
