@@ -21,7 +21,7 @@ def merge(left: list[int], right: list[int]) -> list[int]:
     [1, 2, 3, 4, 5, 6]
     """
     # TODO: Implement
-    pass
+    ...
 
 
 def merge_sort(arr: list[int]) -> list[int]:
@@ -34,7 +34,7 @@ def merge_sort(arr: list[int]) -> list[int]:
     [3, 27, 38, 43]
     """
     # TODO: Implement
-    pass
+    ...
 
 
 # =============================================================================

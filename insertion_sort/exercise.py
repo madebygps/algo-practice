@@ -81,7 +81,7 @@ def insertion_sort(arr: list[int]) -> list[int]:
         The sorted list (sorts in place but also returns it)
     """
     # TODO: Implement this function
-    pass
+    ...
 
 
 # =============================================================================
@@ -113,7 +113,7 @@ def insertion_sort_with_count(arr: list[int]) -> tuple[list[int], int]:
         Tuple of (sorted_list, comparison_count)
     """
     # TODO: Implement this function
-    pass
+    ...
 
 
 # =============================================================================
@@ -149,7 +149,7 @@ def insertion_sort_with_shifts(arr: list[int]) -> tuple[list[int], int]:
         Tuple of (sorted_list, shift_count)
     """
     # TODO: Implement this function
-    pass
+    ...
 
 
 # =============================================================================
@@ -185,7 +185,7 @@ def binary_insertion_sort(arr: list[int]) -> list[int]:
         The sorted list
     """
     # TODO: Implement this function
-    pass
+    ...
 
 
 # =============================================================================
@@ -223,7 +223,7 @@ def sort_nearly_sorted(arr: list[int], k: int) -> list[int]:
     """
     # TODO: Implement this function
     # Hint: You can use regular insertion sort - it's already optimal for this!
-    pass
+    ...
 
 
 # =============================================================================

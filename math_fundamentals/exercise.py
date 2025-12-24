@@ -12,6 +12,7 @@ Estimated time: 30 minutes
 """
 
 import math
+from typing import Sequence
 
 
 # =============================================================================
@@ -120,7 +121,7 @@ def log_base_2(n: int) -> int:
 # PROBLEM 4: Average (Mean)
 # =============================================================================
 
-def average(numbers: list[float]) -> float:
+def average(numbers: Sequence[int | float]) -> float:
     """
     Calculate the average (arithmetic mean) of a list of numbers.
     
@@ -290,11 +291,11 @@ def run_tests():
         'exponential': 256
     }
     if result == expected:
-        print(f"  ✅ compare_growth_rates(8) = correct!")
-        print(f"     Shows: O(1)=1, O(log n)=3, O(n)=8, O(n log n)=24, O(n²)=64, O(2ⁿ)=256")
+        print("  ✅ compare_growth_rates(8) = correct!")
+        print("     Shows: O(1)=1, O(log n)=3, O(n)=8, O(n log n)=24, O(n²)=64, O(2ⁿ)=256")
     else:
         all_passed = False
-        print(f"  ❌ compare_growth_rates(8)")
+        print("  ❌ compare_growth_rates(8)")
         print(f"     Got:      {result}")
         print(f"     Expected: {expected}")
     
