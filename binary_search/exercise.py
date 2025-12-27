@@ -3,26 +3,6 @@ Binary Search Exercise
 ======================
 Practice implementing binary search - an O(log n) algorithm!
 
-Why Binary Search?
-------------------
-Remember log_base_2 from the math exercise? Binary search is WHY that matters!
-- Linear search: O(n) - check every element
-- Binary search: O(log n) - eliminate half the elements each step
-
-For a sorted list of 1,000,000 elements:
-- Linear search: up to 1,000,000 comparisons
-- Binary search: at most 20 comparisons! (log₂(1,000,000) ≈ 20)
-
-Prerequisites:
-- The list MUST be sorted
-- You need to be able to access elements by index
-
-Instructions:
-1. Implement each function according to its docstring
-2. Run the file to check your solutions against the test cases
-3. Try to understand the pattern: divide the search space in half each time
-
-Estimated time: 30 minutes
 """
 
 
@@ -36,6 +16,7 @@ def binary_search(sorted_list: list[int], target: int) -> int:
     Find the index of target in a sorted list using binary search.
 
     Algorithm:
+
     1. Set left pointer to start (0) and right pointer to end (len-1)
     2. While left <= right:
        a. Find the middle index: mid = (left + right) // 2
@@ -43,13 +24,7 @@ def binary_search(sorted_list: list[int], target: int) -> int:
        c. If sorted_list[mid] < target: search right half (left = mid + 1)
        d. If sorted_list[mid] > target: search left half (right = mid - 1)
     3. If loop ends without finding, return -1
-
-    Examples:
-        binary_search([1, 3, 5, 7, 9], 5) -> 2
-        binary_search([1, 3, 5, 7, 9], 1) -> 0
-        binary_search([1, 3, 5, 7, 9], 9) -> 4
-        binary_search([1, 3, 5, 7, 9], 4) -> -1 (not found)
-
+    
     Args:
         sorted_list: A list of integers sorted in ascending order
         target: The value to search for
@@ -57,18 +32,22 @@ def binary_search(sorted_list: list[int], target: int) -> int:
     Returns:
         Index of target if found, -1 if not found
     """
-    low = 0
-    high = len(sorted_list) - 1
 
-    while low <= high:
-        mid = (low + high) // 2
+    left_pointer = 0
+    right_pointer = len(sorted_list) - 1
+    mid = 0
+
+    while left_pointer <= right_pointer:
+        mid = (left_pointer + right_pointer) // 2
         if sorted_list[mid] == target:
             return mid
-        elif sorted_list[mid] < target:
-            low = mid + 1
+        elif target > sorted_list[mid]:
+            left_pointer = mid + 1
         else:
-            high = mid - 1
+            right_pointer = mid - 1
     return -1
+
+    
 
 
 # =============================================================================
