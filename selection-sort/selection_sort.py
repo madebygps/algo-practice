@@ -8,3 +8,4 @@ for i in range(len(play_counts) - 1):
     play_counts[i], play_counts[smallest_idx] = play_counts[smallest_idx], play_counts[i]
             
 print(play_counts)
+
