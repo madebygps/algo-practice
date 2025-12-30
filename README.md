@@ -10,6 +10,8 @@ Practice exercises for common algorithms and data structures.
 | Binary Search | `binary_search/exercise.py` | ~25 min |
 | Merge Sort | `merge_sort/exercise.py` | ~20 min |
 | Insertion Sort | `insertion_sort/exercise.py` | ~30 min |
+| Stack | `stack/exercise.py` | ~25 min |
+| Queue | `queue/exercise.py` | ~25 min |
 
 ## Usage
 
